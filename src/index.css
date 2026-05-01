@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+@theme {
+  --color-hp-gold: #D3A625;
+  --color-hp-red: #740001;
+  --color-hp-black: #1A1A1A;
+  --color-hp-purple: #4c1d95; /* Lighter purple */
+  --color-hp-blue: #0f172a;
+  --font-harry: "Cinzel", serif;
+}
+
+:root {
+  background-color: #0c0c0c;
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  cursor: url('/magic_wand_cursor.png'), auto;
+}
+
+a, button, input, textarea {
+  cursor: url('/magic_wand_cursor.png'), pointer !important;
+}
+
+h1, h2, h3, .font-harry {
+  font-family: var(--font-harry);
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(211, 166, 37, 0.8), 0 0 20px rgba(211, 166, 37, 0.5);
+}
