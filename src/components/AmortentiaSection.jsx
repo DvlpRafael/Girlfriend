@@ -184,6 +184,25 @@ export const AmortentiaSection = () => {
                 </div>
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30 mix-blend-overlay rounded-full" />
               </div>
+
+              {/* Easter Egg: Maçã do Malfoy */}
+              <div 
+                className="absolute -bottom-6 right-16 md:right-32 cursor-pointer z-50 group"
+                onClick={(e) => {
+                  const el = document.getElementById('malfoy-msg');
+                  if(el) {
+                    el.style.opacity = '1';
+                    setTimeout(() => el.style.opacity = '0', 4000);
+                  }
+                }}
+              >
+                <div className="text-3xl md:text-4xl filter drop-shadow-[0_5px_5px_rgba(0,0,0,0.3)] hover:scale-110 transition-transform -rotate-12">🍏</div>
+                <div id="malfoy-msg" className="absolute bottom-full right-0 mb-4 bg-[#111] p-3 border border-green-500/30 rounded-lg shadow-[0_0_20px_rgba(34,197,94,0.2)] w-56 text-center opacity-0 transition-opacity duration-500 pointer-events-none">
+                  <p className="text-green-400/90 font-sans text-xs leading-relaxed">
+                    "Meu pai vai ficar sabendo... que eu sou completamente rendido por você." 🐍🍏
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
 

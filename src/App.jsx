@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Ear } from 'lucide-react';
-import { FloatingParticles, FloatingCandles, GoldenSnitch, Hedwig, MalfoyApple, LunaSpectrespecs } from './components/GlobalEffects';
+import { FloatingParticles, FloatingCandles, GoldenSnitch, Hedwig } from './components/GlobalEffects';
 import { HeroSection } from './components/HeroSection';
 import { MirrorOfErisedSection } from './components/MirrorOfErisedSection';
 import { MaraudersMapSection } from './components/MaraudersMapSection';
@@ -27,8 +27,6 @@ export default function App() {
       {mounted && <FloatingCandles />}
       {mounted && <GoldenSnitch />}
       {mounted && <Hedwig />}
-      {mounted && <MalfoyApple />}
-      {mounted && <LunaSpectrespecs />}
 
       <HeroSection />
       <MirrorOfErisedSection />

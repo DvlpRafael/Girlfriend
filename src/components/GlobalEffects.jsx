@@ -91,6 +91,13 @@ export const FloatingCandles = () => {
 export const GoldenSnitch = () => {
   const [caught, setCaught] = useState(false);
 
+  React.useEffect(() => {
+    if (caught) {
+      const timer = setTimeout(() => setCaught(false), 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [caught]);
+
   return (
     <motion.div
       className="fixed z-[100] cursor-pointer p-8 flex items-center justify-center"
@@ -134,6 +141,13 @@ export const GoldenSnitch = () => {
 
 export const Hedwig = () => {
   const [clicked, setClicked] = useState(false);
+
+  React.useEffect(() => {
+    if (clicked) {
+      const timer = setTimeout(() => setClicked(false), 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [clicked]);
 
   return (
     <motion.div
@@ -187,51 +201,5 @@ export const Hedwig = () => {
         </div>
       )}
     </motion.div>
-  );
-};
-
-export const MalfoyApple = () => {
-  const [clicked, setClicked] = useState(false);
-
-  return (
-    <div className="fixed bottom-32 left-4 md:bottom-20 md:left-20 z-[80] group flex flex-col items-start">
-      <div 
-        className="w-12 h-12 flex items-center justify-center cursor-pointer p-8 rounded-full hover:bg-white/5 transition-colors"
-        onClick={() => setClicked(true)}
-      >
-        <div className="text-3xl filter drop-shadow-[0_0_10px_rgba(34,197,94,0.4)] animate-[bounce_3s_ease-in-out_infinite]">🍏</div>
-      </div>
-
-      {clicked && (
-        <div className="absolute bottom-full left-0 mb-2 bg-[#111] p-3 border border-green-500/30 rounded-lg shadow-[0_0_20px_rgba(34,197,94,0.2)] w-56 text-center z-[110]" onClick={(e) => { e.stopPropagation(); setClicked(false); }}>
-          <p className="text-green-400/90 font-sans text-xs leading-relaxed">
-            "Meu pai vai ficar sabendo... que eu sou completamente rendido por você." 🐍🍏
-          </p>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export const LunaSpectrespecs = () => {
-  const [clicked, setClicked] = useState(false);
-
-  return (
-    <div className="fixed top-24 right-4 md:top-32 md:right-20 z-[80] group flex flex-col items-end">
-      <div 
-        className="w-12 h-12 flex items-center justify-center cursor-pointer p-8 rounded-full hover:bg-white/5 transition-colors"
-        onClick={() => setClicked(true)}
-      >
-        <div className="text-3xl filter drop-shadow-[0_0_10px_rgba(236,72,153,0.4)] animate-[pulse_4s_ease-in-out_infinite] hover:scale-110 transition-transform">👓</div>
-      </div>
-
-      {clicked && (
-        <div className="absolute top-full right-0 mt-2 bg-[#111] p-3 border border-pink-500/30 rounded-lg shadow-[0_0_20px_rgba(236,72,153,0.2)] w-64 text-center z-[110]" onClick={(e) => { e.stopPropagation(); setClicked(false); }}>
-          <p className="text-pink-300/90 font-sans text-xs leading-relaxed">
-            "As coisas que perdemos têm uma maneira de voltar para nós no final... Igual meu coração, que sempre volta pra você, quer dizer, pudim resolve as coisas também né" 👓🍮
-          </p>
-        </div>
-      )}
-    </div>
   );
 };

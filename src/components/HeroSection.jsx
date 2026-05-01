@@ -42,8 +42,27 @@ export const HeroSection = () => {
             <span>Lumos Maxima</span>
             <Sparkles className="w-5 h-5" />
           </motion.div>
-          <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[7rem] font-harry text-transparent bg-clip-text bg-gradient-to-b from-white via-hp-gold to-[#8A6A1C] drop-shadow-[0_0_50px_rgba(211,166,37,0.7)] leading-[1.1] mb-8">
+          <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[7rem] font-harry text-transparent bg-clip-text bg-gradient-to-b from-white via-hp-gold to-[#8A6A1C] drop-shadow-[0_0_50px_rgba(211,166,37,0.7)] leading-[1.1] mb-8 relative">
             Para a bruxinha que<br />roubou meu coração
+            
+            {/* Easter Egg da Luna Lovegood */}
+            <div 
+              className="absolute -top-12 -right-4 md:-right-12 cursor-pointer z-50 group flex flex-col items-center"
+              onClick={(e) => {
+                const el = document.getElementById('luna-msg');
+                if(el) {
+                  el.style.opacity = '1';
+                  setTimeout(() => el.style.opacity = '0', 4000);
+                }
+              }}
+            >
+              <div className="text-4xl md:text-5xl filter drop-shadow-[0_0_15px_rgba(236,72,153,0.5)] hover:scale-110 transition-transform rotate-12 animate-[pulse_3s_ease-in-out_infinite]">👓</div>
+              <div id="luna-msg" className="absolute top-full right-0 mt-2 bg-[#111] p-3 border border-pink-500/30 rounded-lg shadow-[0_0_20px_rgba(236,72,153,0.2)] w-64 text-center opacity-0 transition-opacity duration-500 pointer-events-none">
+                <p className="text-pink-300/90 font-sans text-xs leading-relaxed normal-case tracking-normal">
+                  "As coisas que perdemos têm uma maneira de voltar para nós no final... Igual meu coração, que sempre volta pra você, quer dizer, pudim resolve as coisas também né" 👓🍮
+                </p>
+              </div>
+            </div>
           </h1>
         </motion.div>
       </motion.div>
